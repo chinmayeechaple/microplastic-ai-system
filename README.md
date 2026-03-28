@@ -1,4 +1,6 @@
 # 🌊 Microplastic Morphology Classification & Risk Assessment System
+[WhatsApp Image 2026-03-28 at 15 03 41](https://github.com/user-attachments/assets/df6fecc9-032e-4482-86d9-e4dddb57700e)
+
 
 This Streamlit application analyzes microscopic images of microplastics and classifies them into morphological categories using computer vision techniques.
 
@@ -32,7 +34,10 @@ Classifies particles into:
 
 ---
 ## SAMPLE
+[Watch Demo](https://github.com/chinmayeechaple/microplastic-ai-system/blob/main/Screen%20Recording%202026-03-28%20151514.mp4)
 
+
+ 
 ### 🔹 Size Estimation
 - Uses contour detection  
 - Computes **Feret Diameter (longest dimension)**  
