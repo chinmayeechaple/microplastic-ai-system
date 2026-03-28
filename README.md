@@ -31,6 +31,7 @@ Classifies particles into:
 - Film → lower risk  
 
 ---
+## SAMPLE
 
 ### 🔹 Size Estimation
 - Uses contour detection  
