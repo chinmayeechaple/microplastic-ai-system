@@ -1,78 +1,103 @@
-# 🌊 Microplastic Risk Intelligence System
+# 🌊 Microplastic Morphology Classification & Risk Assessment System
 
-## 🚀 Overview
-Microplastics (particles < 5mm) are a major environmental threat affecting marine ecosystems and human health.
+This Streamlit application analyzes microscopic images of microplastics and classifies them into morphological categories using computer vision techniques.
 
-This project presents a computer vision-based system that detects microplastic particles from images and evaluates their ecological risk based on morphology and size.
+The system identifies microplastic particles as:
 
----
+- Fiber (thread-like)
+- Fragment (irregular, jagged)
+- Film (thin, sheet-like)
 
-## 🎯 Problem Statement
-Traditional microplastic identification methods are expensive and require laboratory setups.
-
-This system provides a **low-cost, automated alternative** using image processing and intelligent scoring to:
-- Identify particle type
-- Estimate size
-- Assess ecological impact
-
----
-
-## 🧠 Key Features
-
-### 🔹 Morphology Classification
-Classifies microplastics into:
-- **Fiber** (thread-like, highest risk)
-- **Fragment** (irregular, medium risk)
-- **Film** (sheet-like, lower risk)
-
----
-
-### 🔹 Size Estimation
-- Uses contour detection
-- Estimates **Feret Diameter (longest dimension)**
-- Represents particle size in micrometers (µm)
-
----
-
-### 🔹 Ecological Risk Index
-Computes a **0–100 risk score** based on:
-- Particle shape (fiber > fragment > film)
-- Size (smaller particles → higher penetration risk)
-- Geometric features (elongation, irregularity)
-
----
-
-### 🔹 Overall Risk Assessment
-Instead of isolated results, the system provides:
-- **Final ecological threat score**
-- Severity classification (Low / Medium / High)
-- Composition breakdown of detected particles
+After classification, the system computes an **Ecological Threat Index (0–100)** based on particle morphology, size (Feret diameter), and geometric features. It also provides environmental impact insights and mitigation strategies.
 
 ---
 
 ## 🛠 Tech Stack
+
 - **Python**
-- **OpenCV** (image processing & contour detection)
-- **Streamlit** (interactive UI)
-- **NumPy** (numerical computation)
-- **PIL** (image handling)
+- **Streamlit** (UI)
+- **OpenCV** (Image Processing)
+- **NumPy** (Computation)
+- **PIL** (Image Handling)
 
 ---
 
-## ⚙️ System Workflow
+## ⚙️ Features
 
-1. Upload microplastic image  
-2. Preprocess image (grayscale + blur)  
-3. Detect edges and contours  
-4. Classify particle morphology  
-5. Estimate size (Feret diameter)  
-6. Compute risk score  
-7. Generate overall ecological risk  
+### 🔹 Microplastic Classification
+Classifies particles into:
+- Fiber → highest ecological risk  
+- Fragment → moderate risk  
+- Film → lower risk  
 
 ---
 
-## ▶️ How to Run
+### 🔹 Size Estimation
+- Uses contour detection  
+- Computes **Feret Diameter (longest dimension)**  
+- Estimates particle size in micrometers (µm)  
+
+---
+
+### 🔹 Ecological Risk Assessment
+Computes a **risk score (0–100)** using:
+- Morphology weight  
+- Particle size  
+- Shape elongation  
+- Contour irregularity  
+
+---
+
+### 🔹 Overall Risk Output
+- Final **Ecological Threat Index**
+- Severity classification:
+  - 🔴 High  
+  - 🟡 Medium  
+  - 🟢 Low  
+
+---
+
+## 🧠 Model
+
+This system uses a **feature-based computer vision model inspired by machine learning principles**.
+
+Instead of training a deep learning model, it performs:
+
+- Edge detection (Canny)
+- Line detection (Hough Transform for fibers)
+- Contour analysis for fragments and films
+- Geometric feature extraction:
+  - Aspect ratio  
+  - Perimeter-to-area ratio  
+  - Shape complexity  
+
+These features are combined using a **weighted scoring function** to simulate intelligent decision-making similar to ML models.
+
+---
+
+## 📊 Dataset
+
+This project does not rely on a pre-trained dataset. Instead, it works on:
+
+- Microscopic images of microplastics  
+- High-resolution synthetic or real-world sample images  
+
+For testing and demonstration, images were selected based on:
+- Clear contrast  
+- Distinct particle shapes  
+- Minimal noise  
+
+Future versions can integrate datasets such as:
+- Microplastic morphology datasets  
+- Marine pollution image datasets  
+- Research datasets from environmental studies  
+
+---
+
+## 📦 Installation
+
+Clone the repository:
 
 ```bash
-pip install -r requirements.txt
-streamlit run app.py
+git clone https://github.com/YOUR_USERNAME/microplastic-ai-system.git
+cd microplastic-ai-system
